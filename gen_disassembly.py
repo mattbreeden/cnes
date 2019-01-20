@@ -43,13 +43,13 @@ def print_instruction(instruction, addressing_mode=None):
             instruction_operand[addressing_mode],
         ), end='')
     elif instruction_size == 2:
-        print('print_instruction({}, "{}", {}, *buf++);'.format(
+        print('print_instruction({}, "{}", {}, *rom++);'.format(
             instruction_size,
             instruction,
             instruction_operand[addressing_mode],
         ), end='')
     else:
-        print('print_instruction({}, "{}", {}, buf[1], buf[0]); buf += 2;'.format(
+        print('print_instruction({}, "{}", {}, rom[1], rom[0]); rom += 2;'.format(
             instruction_size,
             instruction,
             instruction_operand[addressing_mode],
